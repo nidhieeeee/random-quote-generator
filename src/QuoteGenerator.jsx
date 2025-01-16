@@ -35,6 +35,19 @@ function QuoteGenerator() {
     "Happiness is not something ready-made. It comes from your own actions.- Dalai Lama"
 
   ];
+  const colors = [
+    "#1abc9c", // Turquoise
+    "#3498db", // Blue
+    "#9b59b6", // Purple
+    "#e74c3c", // Red
+    "#f39c12", // Orange
+    "#27ae60", // Green
+    "#8e44ad", // Deep Purple
+    "#2980b9", // Dark Blue
+    "#c0392b", // Dark Red
+    "#16a085"  // Teal
+  ];
+  
   function generateQuote() {
     // const randomIndex=(Math.floor(Math.random() * quotes.length));
     // currentQuote(quotes[randomIndex]);
@@ -43,8 +56,9 @@ function QuoteGenerator() {
       randomIndex = Math.floor(Math.random() * quotes.length);
     } while (quotes[randomIndex] === quote);
     currentQuote(quotes[randomIndex]);
-    const randomColor = `#${Math.floor(Math.random() * 16777215).toString(16)}`;
-    setBgColor(randomColor);
+
+    const randomColorIndex = Math.floor(Math.random() * colors.length);
+    setBgColor(colors[randomColorIndex]);
   };
   return (
     <div className="main">
